@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>what meme man are you</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/main.js"></script>
+
+    <!-- <meta property="og:url"           content="https://meme-man-test.web.app/" /> -->
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="what meme man are you" />
+    <meta property="og:description"   content="use our advanced algorithms to find your meme man" />
+    <meta property="og:image"         content="https://meme-man-test.web.app/img/results/the%20answer.png" />
+
+
+    <!-- BEGIN FIREBASE STUFF -->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.6.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.6.1/firebase-auth.js"></script>
+    <!-- <script defer src="/__/firebase/6.6.1/firebase-database.js"></script> -->
+    <!-- <script defer src="/__/firebase/6.6.1/firebase-messaging.js"></script> -->
+    <script defer src="/__/firebase/6.6.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <!-- END FIREBASE STUFF -->
+</head>
+
+<body>
+    <!-- BEGIN FACEBOOK STUFF -->
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '2437372159836712',
+                cookie: true,
+                xfbml: true,
+                version: 'v4.0'
+            });
+            fbLoaded.resolve();
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- END FACEBOOK STUFF -->
+
+
+    <h1 class='center'>what meme man are you?</h1>
+
+    <div id='splash'>
+        <h2 class='center'>find out today</h2>
+        <p class='center'>this test uses extremely advanced algorithms to determine your ideal meme man. very extremely
+            complicated advanced stuff</p>
+        <div class="fb-login-button center" style='display:inline-block' data-width="300" data-size="large" data-button-type="continue_with"
+            data-auto-logout-link="false" data-use-continue-as="false" data-onlogin="fbLoggedIn"></div>
+    </div>
+
+
+    <div id='result' style='display: none;'>
+        <img class='center loading' src='./img/meme man.png' />
+        <h3 class='center'>please wait...</h3>
+        <p class='center'>algorithming...</p>
+
+
+        <div class='center'>
+            <a href="javascript:void(0);">do the algorithm again</a>
+            <div id='share-button-here' style='display: inline-block'></div>
+            <a href="javascript:void(0);" id='try-it' style="display: none">find your meme man</a>
+            <br />
+        </div>
+    </div>
+
+    </br>
+
+    <div id='footer' class='center'>
+        <a class='' href='https://sam.edelsten.me/' target='_blank'>made by sam</a>
+        <br />
+        <a class='privacy' href='https://meme-man-test.web.app/privacy.html' target='_blank'>privacy</a>
+    </div>
+
+
+</body>
+
+</html>

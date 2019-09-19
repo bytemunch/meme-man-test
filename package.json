@@ -1,0 +1,20 @@
+{
+  "name": "facebookquiztest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc & lessc ./src/style.less ./public/style.css & cp ./src/*.html ./public/ & cp ./src/share_results/*.html ./public/share_results/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bytemunch/fbQuiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bytemunch/fbQuiz/issues"
+  },
+  "homepage": "https://github.com/bytemunch/fbQuiz#readme"
+}
