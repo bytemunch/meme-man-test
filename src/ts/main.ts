@@ -48,13 +48,13 @@ function getNewResult(choice?) {
 
     if (choice > 0 && choice <= choices.length) res = choice;
 
-    title.textContent = `${userdata.name} is ${choices[res - 1].title}!`;
+    title.textContent = `you are ${choices[res - 1].title}!`;
     desc.textContent = choices[res - 1].desc;
     img.setAttribute('src', `./img/results/${choices[res - 1].title}.png`);
 
     location.hash = `${res}`;
 
-    modifyShareButton(document.querySelector('#result').querySelector('.fb-share-button'), choices[res - 1].title);
+    // modifyShareButton(document.querySelector('#result').querySelector('.fb-share-button'), choices[res - 1].title);
 
     usedResults.push(res);
 
@@ -100,15 +100,11 @@ function createShareButton(result?) {
     return shareBtn;
 }
 
-function modifyShareButton(button: HTMLElement, result) {
-    let parent = button.parentElement;
-    parent.removeChild(button);
-    parent.appendChild(createShareButton(result));
-
-    //@ts-ignore
-    FB.XFBML.parse();
-
-}
+// function modifyShareButton(button: HTMLElement, result) {
+//     let parent = button.parentElement;
+//     parent.removeChild(button);
+//     parent.appendChild(createShareButton(result));
+// }
 
 function fbLoggedIn() {
     let resultDiv = (<HTMLElement>document.querySelector('#result'));
@@ -116,13 +112,6 @@ function fbLoggedIn() {
     (<HTMLElement>document.querySelector('#splash')).style.display = 'none';
 
     (<HTMLElement>document.querySelector('#share-button-here')).appendChild(createShareButton(location.href));
-    //@ts-ignore
-    FB.XFBML.parse();
-
-    //@ts-ignore
-    FB.api('/me', { fields: ['first_name'] }, res => {
-        userdata.name = res.first_name;
-    });
 
     setTimeout(() => {
         (<HTMLElement>document.querySelector('#result img')).classList.remove('loading');
